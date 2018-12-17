@@ -90,10 +90,10 @@ myUrgentWSRight = "}"
 
 myWorkspaces =
   [
-    "7:Chat",  "8:$$$", "9:Pix",
-    "4:Chr",  "5:Vid", "6:Web",
-    "1:Term",  "2:Hub", "3:Dev",
-    "0:Musica",    "Extr1", "Extr2"
+    "7:$$$", "8:Chat", "9:Pix",
+    "4:Chr", "5:Dev", "6:Web",
+    "1:Hub", "2:Term", "3:Vid",
+    "0:Musica", "Extr1", "Extr2"
   ]
 
 startupWorkspace = "5:Dev"  -- which workspace do you want to be on after launch?
@@ -172,7 +172,7 @@ gimpLayout = smartBorders(avoidStruts(ThreeColMid 1 (3/100) (3/4)))
 -- Here we combine our default layouts with our specific, workspace-locked
 -- layouts.
 myLayouts =
-  onWorkspace "7:Chat" chatLayout
+  onWorkspace "8:Chat" chatLayout
   $ onWorkspace "9:Pix" gimpLayout
   $ defaultLayouts
 
@@ -269,9 +269,9 @@ myManagementHooks = [
   , (className =? "Komodo IDE" <&&> resource =? "Komodo_gotofile") --> doFloat
   , (className =? "Komodo IDE" <&&> resource =? "Toplevel") --> doFloat
   , (className =? "Empathy") --> doF (W.shift "7:Chat")
-  , (className =? "Pidgin") --> doF (W.shift "7:Chat")
+  , (className =? "Slack") --> doF (W.shift "8:Chat")
+  , (className =? "Telegram") --> doF (W.shift "8:Chat")
   , (className =? "Gimp-2.8") --> doF (W.shift "9:Pix")
-  , (className =? "Telegram") --> doF (W.shift "7:Chat")
   ]
 
 
